@@ -528,15 +528,15 @@
 
     if (player) {
       const blink = player.invulnerable > 0 && Math.floor(player.invulnerable * 10) % 2 === 0;
-      circle(player.x, player.y, 15, [0.12, 0.48, 0.72, blink ? 0.35 : 1]);
-      triangle(
-        player.x + Math.cos(player.angle) * 17,
-        player.y + Math.sin(player.angle) * 17,
-        player.x + Math.cos(player.angle + 2.45) * 9,
-        player.y + Math.sin(player.angle + 2.45) * 9,
-        player.x + Math.cos(player.angle - 2.45) * 9,
-        player.y + Math.sin(player.angle - 2.45) * 9,
-        [0.75, 0.9, 0.98, blink ? 0.35 : 1]
+      const playerAlpha = blink ? 0.35 : 1;
+      circle(player.x, player.y, 16, [0.07, 0.29, 0.45, playerAlpha]);
+      circle(player.x, player.y, 13, [0.12, 0.48, 0.72, playerAlpha]);
+      circle(
+        player.x + Math.cos(player.angle) * 7,
+        player.y + Math.sin(player.angle) * 7,
+        3.2,
+        [0.76, 0.91, 0.98, playerAlpha],
+        14
       );
       for (let i = 0; i < player.carry; i += 1) {
         const row = Math.floor(i / 3);
