@@ -502,10 +502,6 @@
         return;
       }
       rect(wall.x, wall.y, wall.w, wall.h, [0.16, 0.20, 0.23, 1]);
-      rect(wall.x, wall.y, wall.w, 5, [0.38, 0.44, 0.47, 1]);
-      for (let x = wall.x + 18; x < wall.x + wall.w; x += 42) {
-        rect(x, wall.y + 8, 18, wall.h - 16, [0.29, 0.22, 0.15, 1]);
-      }
     });
 
     cargo.forEach((box) => {
