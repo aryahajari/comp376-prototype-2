@@ -140,7 +140,7 @@ h2 {
   background: rgba(28, 31, 34, 0.9);
 }
 
-.hud-item span {
+.hud-item > span {
   display: block;
   color: #c7cac5;
   font-size: 0.68rem;
