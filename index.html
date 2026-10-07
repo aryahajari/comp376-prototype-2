@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#20242a">
+  <meta name="description" content="Cargo Run, an experimental browser game for COMP 376 Prototype 2.">
+  <title>Cargo Run</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="game-shell" aria-label="Cargo Run game">
+    <canvas id="game" width="960" height="600" aria-label="Top-down warehouse game"></canvas>
+
+    <section id="hud" class="hud hidden" aria-live="polite">
+      <div class="hud-item">
+        <span>Delivered</span>
+        <strong><span id="delivered">0</span> / 10</strong>
+      </div>
+      <div class="hud-item hud-carry">
+        <span>Carrying</span>
+        <div id="cargo-slots" class="cargo-slots" aria-label="Cargo carried"></div>
+      </div>
+      <div class="hud-item hud-time">
+        <span>Time</span>
+        <strong id="time">1:25</strong>
+      </div>
+    </section>
+
+    <section id="intro" class="screen">
+      <div class="menu-box">
+        <p class="course-label">COMP 376 - Prototype 2</p>
+        <h1>Cargo Run</h1>
+        <p>Move all ten boxes to the loading area before time runs out.</p>
+        <p>Each box you carry makes the cart slower. Forklift collisions knock one box loose.</p>
+
+        <div class="instructions">
+          <p><b>Move</b> WASD or arrow keys</p>
+          <p><b>Restart</b> R</p>
+        </div>
+
+        <button id="start-button" type="button">Start</button>
+      </div>
+    </section>
+
+    <section id="result" class="screen hidden" aria-live="assertive">
+      <div class="menu-box result-box">
+        <p class="course-label" id="result-label">Shift complete</p>
+        <h2 id="result-title">All boxes delivered</h2>
+        <p id="result-text"></p>
+        <div id="stats" class="stats"></div>
+        <button id="restart-button" type="button">Play again</button>
+      </div>
+    </section>
+
+    <div id="message" class="message hidden" aria-live="polite"></div>
+
+    <div id="touch-controls" class="touch-controls hidden" aria-hidden="true">
+      <button data-key="ArrowUp" aria-label="Move up">▲</button>
+      <button data-key="ArrowLeft" aria-label="Move left">◀</button>
+      <button data-key="ArrowDown" aria-label="Move down">▼</button>
+      <button data-key="ArrowRight" aria-label="Move right">▶</button>
+    </div>
+  </main>
+
+  <noscript>This game needs JavaScript enabled.</noscript>
+  <script src="game.js"></script>
+</body>
+</html>
